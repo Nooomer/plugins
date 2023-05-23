@@ -18,7 +18,7 @@ module.exports = (() => {
           github_username: "Nooomer",
         },
       ],
-      version: "1.3.0",
+      version: "1.3.1",
       description: "Adds a slash command to send a random(or with emotions) neko GIF.",
       github: "https://github.com/Nooomer/Plugins",
       github_raw:
@@ -50,7 +50,7 @@ module.exports = (() => {
       },
       {
         title: "v1.3.1",
-        items: ["Change random for first 5 pic"],
+        items: ["Change random for first 50 pic. Turn off random."],
       },
     ],
     main: "Nekos.plugin.js",
