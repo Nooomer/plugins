@@ -26,31 +26,8 @@ module.exports = (() => {
     },
     changelog: [
       {
-        title: "v0.0.1",
-        items: ["Idea in mind"],
-      },
-      {
-        title: "v0.0.5",
-        items: ["Base Model"],
-      },
-      {
-        title: "Initial Release v1.0.0",
-        items: [
-          "This is the initial release of the plugin :)",
-          "I know why you want nekos (⊙x⊙;)",
-        ],
-      },
-      {
-        title: "v1.1.1",
-        items: ["Corrected text."],
-      },
-      {
-        title: "v1.3.0",
-        items: ["Add emotions command."],
-      },
-      {
-        title: "v1.3.1",
-        items: ["Change random for first 50 pic. Turn off random."],
+        title: "v1.3.2",
+        items: ["Change random for first 20 pic."],
       },
     ],
     main: "Nekos.plugin.js",
@@ -226,19 +203,19 @@ module.exports = (() => {
           let response;
           if(emotion == undefined){
             response = await fetch(
-            `https://tenor.googleapis.com/v2/search?q=nekos&key=AIzaSyDy2fnAUloDkGFCC1IEtRkcqrFxAfLqB_Q&limit=50`
+            `https://tenor.googleapis.com/v2/search?q=nekos&key=AIzaSyDy2fnAUloDkGFCC1IEtRkcqrFxAfLqB_Q&limit=20`
           );
           }
           else{
             response = await fetch(
-              `https://tenor.googleapis.com/v2/search?q=nekos ${emotion}&key=AIzaSyDy2fnAUloDkGFCC1IEtRkcqrFxAfLqB_Q&limit=50`
+              `https://tenor.googleapis.com/v2/search?q=nekos ${emotion}&key=AIzaSyDy2fnAUloDkGFCC1IEtRkcqrFxAfLqB_Q&limit=20`
           );
           }
           if (!response.ok){ 
             console.log(response)
             return};
           const data = await response.json();
-          const GIF = Object.values(data.results)[LibraryUtils.randomNo(0, 50)];
+          const GIF = Object.values(data.results)[LibraryUtils.randomNo(0, 20)];
           return send
             ? GIF.itemurl
             : {
