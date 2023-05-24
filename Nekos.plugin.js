@@ -203,19 +203,19 @@ module.exports = (() => {
           let response;
           if(emotion == undefined){
             response = await fetch(
-            `https://tenor.googleapis.com/v2/search?q=nekos&key=AIzaSyDy2fnAUloDkGFCC1IEtRkcqrFxAfLqB_Q&limit=20`
+            `https://tenor.googleapis.com/v2/search?q=neko&key=AIzaSyDy2fnAUloDkGFCC1IEtRkcqrFxAfLqB_Q&limit=20`
           );
           }
           else{
             response = await fetch(
-              `https://tenor.googleapis.com/v2/search?q=nekos ${emotion}&key=AIzaSyDy2fnAUloDkGFCC1IEtRkcqrFxAfLqB_Q&limit=20`
+              `https://tenor.googleapis.com/v2/search?q=neko ${emotion}&key=AIzaSyDy2fnAUloDkGFCC1IEtRkcqrFxAfLqB_Q&limit=20`
           );
           }
           if (!response.ok){ 
             console.log(response)
             return};
           const data = await response.json();
-          const GIF = Object.values(data.results)[LibraryUtils.randomNo(0, 20)];
+          const GIF = Object.values(data.results)[LibraryUtils.randomNo(0, 10)];
           return send
             ? GIF.itemurl
             : {
